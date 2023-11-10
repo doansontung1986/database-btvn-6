@@ -69,7 +69,8 @@ AND first_name LIKE 'J%';
 SELECT film_id, title, SUM(rental_duration * rental_rate) as revenue 
 FROM film
 WHERE release_year = 2015
-GROUP BY film_id;
+GROUP BY film_id
+HAVING revenue > 5000;
 
 -- Bài tập 9: Lấy danh sách bộ phim (films) và ngôn ngữ (language) của từng bộ phim.
 SELECT film.title, language.name
